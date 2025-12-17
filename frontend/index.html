@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Keyword Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="brand">
+                <span class="material-icons logo">graphic_eq</span>
+                <h1>Audio Insight</h1>
+            </div>
+        </header>
+
+        <div class="card" id="input-card">
+            <div class="upload-area" id="drop-zone">
+                <span class="material-icons upload-icon">cloud_upload</span>
+                <p>点击选择或拖拽 WAV 文件</p>
+                <input type="file" id="file-input" accept="audio/*" hidden>
+            </div>
+            <div id="upload-loading" class="loading-bar hidden">
+                <div class="indeterminate"></div>
+            </div>
+        </div>
+
+        <div id="stage" class="hidden">
+            
+            <div class="card player-card">
+                <div id="waveform"></div>
+                <div class="controls">
+                    <button id="play-btn" class="fab">
+                        <span class="material-icons">play_arrow</span>
+                    </button>
+                    <div class="time-display">
+                        <span id="current-time">00:00</span> / <span id="total-time">00:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-row">
+                <div class="card transcript-card">
+                    <div class="card-header">
+                        <h3>实时转写</h3>
+                        <span id="status-badge" class="badge processing">分析关键词中...</span>
+                    </div>
+                    <div id="transcript-box" class="transcript-content">
+                        </div>
+                </div>
+
+                <div class="card wordcloud-card">
+                    <h3>关键词云</h3>
+                    <div class="wc-container">
+                        <div id="wc-loading" class="spinner"></div>
+                        <img id="wordcloud-img" class="hidden" alt="Word Cloud" />
+                        <div id="wc-placeholder">等待分析完成...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/wavesurfer.js@7.0.0/dist/wavesurfer.min.js"></script>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
