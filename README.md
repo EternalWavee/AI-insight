@@ -1,6 +1,4 @@
-# AI-Insight
----
-# Whisper-X + KeyBERT Pipeline Demo
+# AI-Insight——Whisper + KeyBERT Pipeline Demo
 
 ## 初版想法
 - 使用 **Whisper-X** 进行 ASR，将语音转为文本。
@@ -34,3 +32,9 @@
 - 可以高亮关键词，显示每个 token 的词性、TF-IDF 和频率。
 - 词云可直接显示 top N 关键词及其权重。
 - 可配合简单的 HTML/JS 或 React 实现动态展示。
+
+
+##后续工作
+- 打算用MLP/transformer 训练一个新的key word分类器
+- 并且打算利用对齐audio的信息，比如energy用来代表重音，可以更好的预测keyword
+- 可以顺便使用其他model把文本直接输出大纲，辅以词云应该会更好
