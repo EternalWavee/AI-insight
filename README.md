@@ -34,7 +34,7 @@
 - 可配合简单的 HTML/JS 或 React 实现动态展示。
 
 
-##后续工作
+## 后续工作
 - 打算用MLP/transformer 训练一个新的key word分类器
 - 并且打算利用对齐audio的信息，比如energy用来代表重音，可以更好的预测keyword
 - 可以顺便使用其他model把文本直接输出大纲，辅以词云应该会更好
