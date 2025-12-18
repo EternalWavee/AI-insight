@@ -1,5 +1,7 @@
 # AI-Insight——Whisper + KeyBERT Pipeline Demo
 
+🐶-->详细使用方法请见：[USAGE.md](USAGE.md)
+
 ## 初版想法
 - 使用 **Whisper-X** 进行 ASR，将语音转为文本。
 - 同时采样音频特征（如能量、频率等）。
