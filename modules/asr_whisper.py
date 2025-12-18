@@ -157,16 +157,3 @@ def run_asr(
         logger.info(f"ASR JSON 已保存到 {json_path}")
 
     return out
-
-
-# ----------------------- 本地测试 -----------------------
-if __name__ == "__main__":
-    base = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    wav = os.path.join(base, "assets", "audio", "m.wav")
-    json_file = os.path.join(base, "assets", "json", "asr_whisper.json")
-
-    try:
-        res = run_asr(wav, model_name="small", json_path=json_file)
-        print(json.dumps(res, ensure_ascii=False, indent=2)[:2000])
-    except Exception as e:
-        print("ASR Error:", e)

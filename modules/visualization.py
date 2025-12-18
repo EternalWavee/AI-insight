@@ -78,9 +78,3 @@ def run_visualization(
     frontend_data = build_frontend_json(tokens, keywords)
     save_frontend_json(frontend_data, frontend_json_path)
     generate_wordcloud(keywords, wordcloud_path)
-
-# -------------------------
-# 本地测试
-# -------------------------
-if __name__ == "__main__":
-    run_visualization()

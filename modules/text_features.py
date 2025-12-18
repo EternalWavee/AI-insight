@@ -160,13 +160,3 @@ class TextFeatureExtractor:
         logger.info(f"keywords JSON 保存到 {keywords_json_path}")
 
         return df, keywords
-
-# -------------------------
-# 本地测试
-# -------------------------
-if __name__ == "__main__":
-    extractor = TextFeatureExtractor()
-    text = "本研究提出了一种新的语音识别模型结构。实验结果显示，该方法在多噪声环境下具有更高的鲁棒性。"
-    df, kws = extractor.process_text(text)
-    print(df.head())
-    print(kws)
